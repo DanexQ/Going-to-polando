@@ -8,20 +8,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    
     <div class="hero">
+      <div class="hero__mobile-container">
+        <div class="hero__img"><a href="https://ckziu.zbaszynek.pl/"><img class="ckziu" src="ckziu.png" alt="Logo CKZiU Zbąszynek"></a></div>  
+      </div>
       <div class="hero__flag">
         <img src="sweden-flag.png" alt="sweden">
       </div>
       <div class="hero__container">
         <h1 class="hero__title">Powrót z Erasmus+</h1>
-        <h2 id="licznik" class="hero__counter"></h2>  
+        <h2 id="licznik" class="hero__counter"></h2>
       </div>
 
       <div class="hero__img-container">
-          <div class="hero__img"><a href="https://www.facebook.com/eumobilitysverige"><img class="mob" src="mobility.png" alt="Logo EU Moblity Sverige"></a></div>
-          <div class="hero__img"><a href="https://ckziu.zbaszynek.pl/"><img class="ckziu" src="ckziu.png" alt="Logo CKZiU Zbąszynek"></a></div>
-          <div class="hero__img"><img class="ue" src="ue.jpg" alt="Logo Unii Europejskiej"></div>
+        <div class="hero__img"><abbr title="Organizatorzy Erasmus+ w Szwecji"><a href="https://www.facebook.com/eumobilitysverige"><img class="mob" src="mobility.png" alt="Logo EU Moblity Sverige"></a></abbr></div>
+        <div class="hero__img"><abbr title="Moja szkoła"><a href="https://ckziu.zbaszynek.pl/"><img class="ckziu" src="ckziu.png" alt="Logo CKZiU Zbąszynek"></a></abbr></div>
+        <div class="hero__img"><abbr title="Unia Europejska"><img class="ue" src="ue.jpg" alt="Logo Unii Europejskiej"></abbr></div>
+      </div>
+
+      <div class="hero__mobile-container">
+        <div class="hero__img"><a href="https://www.facebook.com/eumobilitysverige"><img class="mob" src="mobility.png" alt="Logo EU Moblity Sverige"></a></div>
       </div>
   </div>
 </div>
@@ -29,22 +36,19 @@
 
   <script>
 
-    var countDownDate = new Date("May 29, 2022 23:59:59").getTime();
-    
-    var x = setInterval(function() {
-    
+    var countDownDate = new Date("May 28, 2022 23:59:59").getTime();
+
+    setInterval(function() {
       var now = new Date().getTime();
-    
       var distance = countDownDate - now;
-    
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+      
       document.getElementById("licznik").innerHTML = days + "D " + hours + "H "
       + minutes + "M " + seconds + "S ";
-    
+
       if (distance < 0) {
         clearInterval(x);
         document.getElementById("licznik").innerHTML = "WRÓCILIŚMY!";
