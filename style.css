@@ -214,7 +214,7 @@ body{
     animation-iteration-count: infinite;
 }
 
-@media (max-width: 43rem){
+@media (max-width: 688px){
     .hero__container{
         justify-content: space-evenly;
         height: auto;
@@ -275,6 +275,13 @@ body{
         display: none;
     }
 
+    .nav__mobile-container{
+        margin-top: 1rem;
+    }
+
+    .hero__dwarr{
+        margin-bottom: 2rem;
+    }
 }
 
 @keyframes MovingArrow{
@@ -301,7 +308,7 @@ abbr,a{
 /* Authors section */
 
 .authors{
-    padding: 2rem 0;  
+    padding: 2rem 10rem;  
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -314,9 +321,8 @@ abbr,a{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 3rem;
+    gap: 5rem;
     animation: MoreOpacity 1s 1s backwards;
-    width: 70%;
 }
 
 .author{
@@ -343,47 +349,9 @@ abbr,a{
     z-index: 10;
 }
 
-@media (min-width:62rem){
-    .authors{
-        overflow: hidden;
-    }
 
-    .author-name{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #3456A8;
-    box-shadow: inset 0 0 4rem #F2C438;
-    position: absolute;
-    transition: all .5s;
-    font-size: 1.3rem;
-    }
-
-    .author:hover{
-        transform: scale(1.2);
-        filter: drop-shadow(2px 1rem 3rem rgba(0, 0, 0));
-    
-    }
-    
-    .authors-container:hover .author:not(:hover){
-        transform: scale(0.9);
-        opacity: .6;
-        filter: drop-shadow(2px .5rem .5rem rgba(0, 0, 0, 0.568));
-    }
-    
-    .author:hover .author-name{
-        transform: translateY(-100%);
-        background-color: rgb(52, 86, 168, .8);
-    }
-}
 
 .author-image{
-    width: 100%;
-}
-
-.small-image{
     width: 100%;
 }
 
@@ -397,40 +365,10 @@ abbr,a{
     transition: all .2s;
 }
 
-
-@media (max-width: 43rem){
-    .nav__mobile-menu{
-        display: flex;
-        z-index: 998;
-    }
-    .nav__menu-container{
-        display: none;
-    }
-
-    .hero__mobile-menu-choices{
-        position: absolute;
-        top: -150%;
-        left: 0%;
-        width: 100%;
-        height: 100%;   
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-evenly;
-        background-image: linear-gradient(to bottom right, #3D9EFF, #FFF700);
-        z-index: 11;
-    }
-
-    .authors-container{
-        flex-direction: column;
-    }
-
-    .author-name{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-    }
+.author-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -454,4 +392,87 @@ abbr,a{
         opacity: 0.6;
         filter: blur(30px);
     }
+}
+
+@media (min-width: 992px){
+    .authors{
+        overflow: hidden;
+        padding: 2rem 10rem;
+    }
+
+    .author{
+        width: 100%;
+    }
+    .author-name{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #3456A8;
+        box-shadow: inset 0 0 4rem #F2C438;
+        position: absolute;
+        transition: all .5s;
+    }
+
+    .author:hover{
+        transform: scale(1.05);
+        filter: drop-shadow(2px 1rem 3rem rgba(0, 0, 0));
+    
+    }
+
+    .authors-container:hover .author:not(:hover){
+        transform: scale(0.9);
+        opacity: .6;
+        filter: drop-shadow(2px .5rem .5rem rgba(0, 0, 0, 0.568));
+    }
+    
+    .author:hover .author-name{
+        transform: translateY(-100%);
+        background-color: rgb(52, 86, 168, .8);
+    }
+}
+
+@media (max-width: 688px){
+    .nav__mobile-menu{
+        display: flex;
+        z-index: 998;
+    }
+    .nav__menu-container{
+        display: none;
+    }
+
+    .hero__mobile-menu-choices{
+        position: absolute;
+        top: -150%;
+        left: 0%;
+        width: 100%;
+        height: 100%;   
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-image: linear-gradient(to bottom right, #3D9EFF, #FFF700);
+        z-index: 11;
+    }
+
+    .authors{
+        padding: 2rem 3rem;
+    }
+    .authors-container{
+        padding: 2rem 0;
+        flex-direction: column;
+    }
+}
+
+@media (min-width:688px) and (max-width: 992px){
+    .authors-container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .authors{
+        padding: 2rem 5rem;
+    }
+
 }
